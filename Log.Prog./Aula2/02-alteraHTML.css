@@ -1,4 +1,21 @@
 #nome_div{
 
-    font-size:25px 
+    font-size:50px ;
+}
+
+#seg_linha{
+    color: blue;
+    text-align:right;
+    font-size:25px;
+}
+#texto_colorido{
+    color:blue;
+    background-color: black;
+    font-family: 'Mansalva', cursive;
+
+    font-size:100px;
+}
+p{
+
+    color:yellowgreen
 }
