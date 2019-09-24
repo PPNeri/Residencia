@@ -1,19 +1,37 @@
-body {
-        
-    
+/*p{
+    color:blue;
+    background-color: yellowgreen;
 }
-
-form{
-border-image:2px;
-width: 10cm;
-
-
-}
+*/
 p{
-  margin-left:1.5cm;
+    border:2px solid black; 
+    line-height: 20px;
+    letter-spacing: 3px;
+    word-spacing: 5px;
+    text-indent: 30px;
+    font-family:monospace;
 }
-#produtos{
-  text-align: left;
-  color:rgb(50, 100, 75);
-  font-family: 'Courier New', Courier, monospace;
+h1{
+    border: none;
+    background-image: url(../My-mirrorfashion/img/sobre-background.jpg);
+    font-family: serif;
+}
+h2{ 
+    border: none;
+    text-align: left;
+    font-family: sans-serif;
+}
+
+body{
+    /*border-color:red;
+    border-style: solid;
+    border-width: 1px;
+    */
+    font-family:'Times New Roman', "Times", serif;
+    border:2px solid black;
+
+}
+h3{
+    color :rgb(255,200,0);
+    background-color:#f2eded;
 }
