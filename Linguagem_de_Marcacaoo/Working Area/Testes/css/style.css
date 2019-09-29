@@ -4,12 +4,19 @@
 }
 */
 p{
+    background-color: red;
+    height: 300px;
+    width:900px;
     border:2px solid black; 
     line-height: 20px;
     letter-spacing: 3px;
     word-spacing: 5px;
     text-indent: 30px;
     font-family:monospace;
+    padding: 50px;
+    /*margin:0 auto;*/
+    margin-top: 2cm;
+
 }
 h1{
     border: none;
@@ -34,4 +41,9 @@ body{
 h3{
     color :rgb(255,200,0);
     background-color:#f2eded;
+}
+
+ol{
+
+    list-style:upper-roman;
 }

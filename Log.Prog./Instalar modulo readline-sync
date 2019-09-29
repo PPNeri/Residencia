@@ -1,0 +1,4 @@
+Instalação modulo readline-sync
+
+sudo npm install -g readline-sync
+sudo npm install --save readline-sync

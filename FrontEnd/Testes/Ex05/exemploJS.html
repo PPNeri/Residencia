@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Primeiro teste JS</title>
+        
+    </head>
+    
+    <body>
+        <h1 id="teste">Aula 1 JS</h1>
+
+        <input type="text" id="v1" placeholder="InsiraValor1">
+        <input type="text" id="v2" placeholder="InsiraValor2">
+
+        <button onclick="add()">Add</button>
+        <button onclick="sub()">Sub</button>
+        <button onclick="mult()">Mult</button>
+        <button onclick="div()">Div</button>
+
+        <!--<input type="text" id="dados" value="agora vai!!!">
+        <button onclick="Modificar()">Modificar</button>-->
+
+        <script>
+            var x=0;
+            //alert("Bom DIA")
+            //document.write("Bom Dia");
+            
+            function Modificar(){
+
+                var aux=document.getElementById("dados").value;
+                document.getElementById("dados").value=document.getElementById("teste").innerHTML;
+                document.getElementById("teste").innerHTML=aux;
+            }
+
+            function add(){
+
+                var v1=Number(document.getElementById("v1").value);
+                var v2=Number(document.getElementById("v2").value);
+                //var soma=v1+v2;
+                var resultado=v1+v2;
+                document.write(resultado);
+
+
+            }
+
+
+            function sub(){
+
+                var v1=Number(document.getElementById("v1").value);
+                var v2=Number(document.getElementById("v2").value);
+                //var soma=v1+v2;
+                var resultado=v1-v2;
+                document.write(resultado);
+            }
+
+            function mult(){
+
+              var v1=Number(document.getElementById("v1").value);
+              var v2=Number(document.getElementById("v2").value);
+              //var soma=v1+v2;
+              var resultado=v1*v2;
+              document.write(resultado);
+            }   
+
+            function div(){
+
+                var v1=Number(document.getElementById("v1").value);
+                var v2=Number(document.getElementById("v2").value);
+                //var soma=v1+v2;
+                var resultado=v1/v2;
+                document.write(resultado);
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+
+</html>

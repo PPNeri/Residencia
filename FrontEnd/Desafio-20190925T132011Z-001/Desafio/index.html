@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Beer Bank</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+<style>
+    .col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.header{
+   background-color:orange;
+}
+
+.header > h1{
+    color:white;
+}
+.header > p{
+    color:white;
+}
+.header_link{
+    color:white;
+}
+/*Para dispositivos com width menor que 768px*/
+body {
+  padding-top: 50px;
+}
+
+.card-body > h4{
+  color:orange;
+  font-weight: bold;
+}
+
+.card-body > p{
+  color:grey; 
+}
+
+.fa-star {
+  color: orange;  
+}
+
+/*Para dispositivos com width maior ou igual a 768px*/
+@media (min-width: 768px) {
+ body {
+     padding-top: 20px;
+  }
+}
+
+.card-img-top{
+  height:200px;
+  width: 100px;
+}
+
+
+</style>
+</head>
+<body>
+
+
+
+
+    <nav class="navbar navbar-expand navbar-expand-sm navbar-expand-lg navbar-expand-md navbar-expand-xl fixed-top header">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link header_link" onclick="getBeers()" href="#">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link header_link" onclick="listFavourite()" href="#">FAVORITE</a>
+                </li>
+            </ul>
+    </nav>
+  <main role="main" >
+	<div class="jumbotron text-center header">
+
+	  <h1>The Beer Bank</h1>
+	  <p>Find your favourite beer here</p>
+	  <div class="container">
+	  <div class="row">
+	     <div class="col-md-6 col-centered">
+	     <input type="text" class="form-control" name="search" id="search" placeholder="Search for beer name" onchange="searchBeer()">
+	     </div>
+	  </div>
+	  </div>
+	</div>
+
+<div class="container">
+  <div class="card-deck" id="home">
+
+  </div>
+</div>
+</main>
+<script>
+
+  var listFav = new Array();
+function addFav(x, name) {  
+  x.classList.toggle('fa-star');
+  x.classList.toggle('fa-star-o');
+  
+  $.get("https://api.punkapi.com/v2/beers?beer_name="+name, function(data, status){                
+                $.each( data, function( key, value ) {
+                    //console.log(  "FAVOR: " + value );
+                    //console.log(JSON.stringify(listFav));
+                    var isFav = false;
+                    listFav.forEach((f)=>{
+                      if(value.name == f.name ){
+                        console.log("REMOVE");
+                        listFav.splice($.inArray(value, listFav),1);
+                        isFav = true;
+                      }
+                    });
+                    if(!isFav){
+                      console.log("ADD");
+                      listFav.push(value);                    
+                    }                    
+                });
+            });
+}
+
+function listFavourite(){
+  $("#home").empty();
+  listFav.forEach((value)=>{
+    $("#home").append(
+                      '<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mx-auto">'+
+                          '<div class="shadow card bg-white mb-4">'+
+                            '<div class="text-right">'+
+                              '<i onclick="addFav(this, \''+value.name+'\')" class="fa fa-star mr-2 mt-2"></i>'+
+                            '</div>'+
+                            '<div class="text-center">'+
+                              '<img class="card-img-top" src="'+value.image_url+'" alt="Card image cap">'+
+                            '</div>'+
+                          '<div class="card-body text-center">'+
+                            '<h4 class="card-text">'+value.name+'</h4>'+
+                            '<p class="card-text">'+value.description+'</p>'+
+                            '</div> </div> </div>  ');
+  });
+}
+
+function getBeers(){
+            $("#home").empty();
+            $.get("https://api.punkapi.com/v2/beers", function(data, status){                
+                $.each( data, function( key, value ) {
+                    //console.log( key + ": " + value );
+                    var isFav = false;
+                    listFav.forEach((f)=>{
+                      if(value.name == f.name ){
+                          isFav = true;
+                          $("#home").append(
+                          '<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mx-auto">'+
+                          '<div class="shadow card bg-white mb-4">'+
+                            '<div class="text-right">'+
+                              '<i onclick="addFav(this, \''+value.name+'\')" class="fa fa-star mr-2 mt-2"></i>'+
+                            '</div>'+
+                            '<div class="text-center">'+
+                              '<img class="card-img-top" src="'+value.image_url+'" alt="Card image cap">'+
+                            '</div>'+
+                          '<div class="card-body text-center">'+
+                            '<h4 class="card-text">'+value.name+'</h4>'+
+                            '<p class="card-text">'+value.description+'</p>'+
+                            '</div> </div> </div>  ');
+                            return;
+                        }
+                    });
+                    if(!isFav){
+                      $("#home").append(
+                          '<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mx-auto">'+
+                          '<div class="shadow card bg-white mb-4">'+
+                            '<div class="text-right">'+
+                              '<i onclick="addFav(this, \''+value.name+'\')" class="fa fa-star-o mr-2 mt-2"></i>'+
+                            '</div>'+
+                            '<div class="text-center">'+
+                              '<img class="card-img-top" src="'+value.image_url+'" alt="Card image cap">'+
+                            '</div>'+
+                          '<div class="card-body text-center">'+
+                            '<h4 class="card-text">'+value.name+'</h4>'+
+                            '<p class="card-text">'+value.description+'</p>'+
+                            '</div> </div> </div>  ');
+                    } 
+                });                                        
+            });
+        }
+
+        function searchBeer(){
+          var name = $("#search").val();
+          $("#home").empty();
+            $.get("https://api.punkapi.com/v2/beers?beer_name="+name, function(data, status){                
+                $.each( data, function( key, value ) {
+                    //console.log( key + ": " + value );                    
+                    var isFav = false;
+                    listFav.forEach((f)=>{
+                      if(value.name == f.name ){
+                          isFav = true;
+                          $("#home").append(
+                          '<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mx-auto">'+
+                          '<div class="shadow card bg-white mb-4">'+
+                            '<div class="text-right">'+
+                              '<i onclick="addFav(this, \''+value.name+'\')" class="fa fa-star mr-2 mt-2"></i>'+
+                            '</div>'+
+                            '<div class="text-center">'+
+                              '<img class="card-img-top" src="'+value.image_url+'" alt="Card image cap">'+
+                            '</div>'+
+                          '<div class="card-body text-center">'+
+                            '<h4 class="card-text">'+value.name+'</h4>'+
+                            '<p class="card-text">'+value.description+'</p>'+
+                            '</div> </div> </div>  ');
+                            return;
+                        }
+                    });
+                    if(!isFav){
+                      $("#home").append(
+                          '<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mx-auto">'+
+                          '<div class="shadow card bg-white mb-4">'+
+                            '<div class="text-right">'+
+                              '<i onclick="addFav(this, \''+value.name+'\')" class="fa fa-star-o mr-2 mt-2"></i>'+
+                            '</div>'+
+                            '<div class="text-center">'+
+                              '<img class="card-img-top" src="'+value.image_url+'" alt="Card image cap">'+
+                            '</div>'+
+                          '<div class="card-body text-center">'+
+                            '<h4 class="card-text">'+value.name+'</h4>'+
+                            '<p class="card-text">'+value.description+'</p>'+
+                            '</div> </div> </div>  ');
+                    } 
+                
+                });
+            });
+        }
+
+        $(document).ready(function(){          
+            getBeers();
+        });
+</script>
+
+</body>
+</html>

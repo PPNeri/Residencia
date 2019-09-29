@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Entrada e saida de Dados no Html</title>
+    </head>
+    <body>
+    <h1 id="h1">EXERCÍCIOS PARA TESTE</h1>
+        <h2 id="h2">DIGITE OS DADOS</h2>
+        <form>
+            Entrada : </br>
+            <input type="text" id="id_entrada_dados" NAME="entrada_dados" SIZE=15 >
+            <!--<input type="button" value="Chama Javascript" onclick="funcJS_ById()">-->
+            <input type="button" value="Chama Javascript" onclick="funcJS(this.form)">
+            <br>Resultado:</br>
+            <input type="text" id="id_saida_dados" NAME="saida_dados" SIZE=15>
+        </form>
+        <form style="margin-left: 500px">
+            <br> R$ Produto:</br>
+            <input type="text" id="val_Produto" placeholder="digite o valor se seu produto">
+            <br>Quantidade:</br>
+            <input type="text" id="qut_Produto" placeholder="digite a quantidade">
+            <input type="button" id="btn_Calc" value="Total" onclick="calc()">
+            <br>Total:</br>
+            <input type="text" id="total" placeholder="Total">
+
+        </form>
+        <input type="button" onclick="trocah2()" value="troca titulo">
+        
+        
+
+
+
+
+        <script src="EntradaSaidaDados.js"></script>    
+    </body>
+
+</html>
