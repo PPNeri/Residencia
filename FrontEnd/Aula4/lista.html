@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="nota" placeholder="Entre com a nota">
+    <button onclick="addNota()">Add</button>
+    <button onclick="removNota()">Remove</button>
+    <div id="lista"></div>
+    <script>
+        var notas = [];// new Array();
+
+        function addNota(){
+            notas.push(Number(nota.value));
+            console.log(notas);            
+            lista.innerHTML ="";
+            for(let i=0;i<notas.length;i++){
+                lista.innerHTML +="<p>"+notas[i]+"</p>"; 
+            }
+        }
+        function removNota(){
+            notas.pop();
+            lista.innerHTML ="";
+            for(let i=0;i<notas.length;i++){
+                lista.innerHTML +="<p>"+notas[i]+"</p>"; 
+            }
+        }
+        
+
+    </script>
+</body>
+</html>

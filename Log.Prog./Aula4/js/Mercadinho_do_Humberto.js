@@ -4,7 +4,7 @@ const arroz=14.90;
 const feijao=3.99;
 const ovo=4.79;
 
-for (i=0;i<10;i++){
+for (let i=0;i<10;i++){
     
     cod =Number(input.question("Codigo do Produto : "));//Passando de String to Nunmber
     qtd=Number(input.question("Quantidade :"));//Passando de String to Nunmber

@@ -8,115 +8,47 @@
     </head>
     
     <body>
+
         <h1 id="teste">Calculadora</h1>
 
         
         <input type="text" id="visor" style="width: 3.8cm" value 0>
+    <div id='teclado'>   
     <h2>
         <div>
         <button onclick ="getText(1)">1</button>
         <button onclick ="getText(2)">2</button>
         <button onclick ="getText(3)">3</button>
-        <button onclick="soma()" style="width: .6cm">+</button>
+        <button onclick="soma()">+</button>
         </div>    
 
         <div>
         <button onclick ="getText(4)">4</button>
         <button onclick ="getText(5)">5</button>
         <button onclick ="getText(6)">6</button>
-        <button onclick="sub()"style="width: .6cm">-</button>
+        <button onclick="sub()">-</button>
 
         </div>
 
         <div>
         <button onclick ="getText(7)">7</button>
-        <button onclick ="getText(8)">5</button>
+        <button onclick ="getText(8)">8</button>
         <button onclick ="getText(9)">9</button>
-        <button onclick="mult()" style="width: .6cm">x</button>
+        <button onclick="mult()">x</button>
 
         </div>
         <div>
         <button onclick="getText(0)"> 0 </button>
-        <button onclick="resultado()" style="width:.6"  > = </button>
-        <button onclick="div()" style="width: .6cm"> / </button>
-        <button onclick="limpar()"style="width:.6cm">C</button>
-        
+        <button onclick="resultado()"  > = </button>
+        <button onclick="div()"> / </button>
+        <button onclick="getText('.')">.</button>
+        </div>
+        <div id="btnc">
+        <button onclick="limpar()"style="width:.8cm">C</button>    
         </div>
     </h2>
-        
-        <script>
-
-            
-        function getText(val){
-
-             visor.value+=val;
-
-
-            }
-
-        function soma(){
-            visor.value+="+";
-            
-
-        }
-
-        function sub(){
-            visor.value+="-";
-            
-
-        }
-
-        function mult(){
-            visor.value+="*";
-            
-
-        }
-
-        function div(){
-            visor.value+="/";
-            
-
-        }
-
-        function limpar(){
-            document.getElementById("visor").value="";
-            
-        }
-
-        
-
-
-
-
-
-
-
-
-
-
-        function resultado (){
-
-            var result=document.getElementById("visor").value;
-
-            visor.value=eval(result);
-
-            
-
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </script>
+    </div>     
+        <script src="calc.js"></script>
     </body>
 
 </html>

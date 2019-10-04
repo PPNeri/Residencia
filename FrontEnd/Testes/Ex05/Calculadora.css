@@ -1,15 +1,36 @@
 div{
     margin:5px;
+    
 }
-h2{
-    background-color: gray;
-    border: 2px solid black;
-    width: 3.3cm;
-    padding: 10px;
+#teclado{
+        width: 5cm;
+    padding: 20px;
+    text-align: center;
 }
 input{
     border: 2px solid black;
+    
 }
 body{
-    margin-left: 13.5cm;
+    
+    border: 2px solid black;
+    width:250px;
+    text-align: center;
+    
+}
+h2{
+    background-color: gray;
+    padding: 10px;
+    
+}
+button{
+    text-align:left;
+    font:normal 15pt arial;
+    width: .8cm;
+}
+#btnc{
+    font-display: unset;
+    text-align:left;
+    margin-left:14px;
+     
 }

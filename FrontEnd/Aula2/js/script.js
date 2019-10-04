@@ -5,7 +5,7 @@ var cont=0;
             cont++;
             var linha = "<tr id='linha"+cont+"' >"
                             +"<td id='nome"+cont+"' >"+nome+"</td>"
-                            +"<td><button class='btn btn-warning' data-toggle='modal' data-target='#exampleModal' data-whatever='"+cont+"'>Editar</button></td>"
+                            +"<td><button class='btn btn-warning' onclick='editar("+cont+")'>Editar</button></td>"
                             +"<td>"
                             +"<button onclick='remover("+cont+")' class='btn btn-danger'>Remover</button>"
                             +"</td>"

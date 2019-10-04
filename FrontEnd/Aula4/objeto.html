@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+            <h1 onmouseover="teste()" id="nome"></h1>
+    </div>
+    <div>
+            <p id="id"></p>
+    </div>
+    <div>
+            <p id="resp"></p>
+    </div>
+
+    <script>
+
+        function teste(){
+            alert("FUNFOU!!!");
+        }
+
+        window.onload = function(){
+            var aluno = {
+                nome:"Fulano",
+                sobrenome: "da Silva",
+                idade:20,
+                matricula:"22222",
+                nomeCompleto:function(){
+                    return aluno.nome+" "+aluno.sobrenome;
+                },
+                isResponsavel:function(){
+                    console.log(aluno.idade);
+                    if(aluno.idade < 18)
+                        return "Depende de um responsável!";
+                    else
+                        return "Pode prender!!!";
+                }
+            };        
+            console.log(aluno);
+            nome.innerHTML = "Nome do aluno feio: "+aluno.nomeCompleto();
+            id.innerHTML = "<strong>Idade:</strong> "
+                            +aluno.idade;
+            resp.innerHTML = "<strong>Responsável? </strong> "
+                            +aluno.isResponsavel();
+            var teste = aluno.isResponsavel;
+            console.log(teste());
+        }
+
+        
+        
+    </script>
+</body>
+</html>
