@@ -1,0 +1,139 @@
+.menu-opcoes ul li {
+    display:inline;
+    margin:10px;
+    
+}
+.menu-opcoes a{
+    color:rgb(19,34,105);
+}
+
+.sacola{
+    background-image: url(../../../arquivos_curso_ling_marcacao/mirrorfashion/img/sacola.png);
+    background-position:top right;
+    background-repeat: no-repeat;
+    float: right;
+    font-size:14px;
+    padding-right: 35px;
+    text-align: right;
+    width:140px;
+    position: absolute;
+    top:15px;
+    right: 10px;
+    background-color:wheat;
+
+}
+.head{
+    text-align: center;
+    background-color:wheat;
+    padding: 20px;
+    
+}
+.busca,.departamentos{
+    float: left;
+    background-color: rgb(216, 208, 208);
+    width:250px;
+    margin-top:10px;
+    padding: 5px;
+}
+
+.banner{
+    text-align: center;
+    width:750px;
+    margin-left: 350px;
+      
+    
+}
+
+.banner h2{
+    color:rgb(207,245,251);
+    
+}
+.departamentos {
+    display: inline-block;
+    clear:left;
+    font-weight: bold;
+ 
+    
+}
+.departamentos li{
+    background-color: white;
+    margin-bottom: 1px;
+    padding: 5px 10 px;
+    
+}
+
+
+
+.departamentos ul{
+    text-decoration:slategray;
+    margin-right: 2px;
+}
+
+
+
+.departamentos h2{
+    margin: 1px;
+    
+}
+
+
+.busca{
+    
+    display: inline;
+}
+.busca h2{
+    display: inline;
+}
+.busca input[type=search] {
+    width: 170px;
+    border-radius: 10px;
+}
+
+.produtos{
+    float: left;
+    background-color: #DCDCF5
+}
+.produtos h2{
+    font-size:24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+
+.novidades{
+    float: right;
+    background-color: #F5DCDC;
+}
+
+
+
+.container{
+    margin: 10px 0;
+    padding: 10px;
+    width: 445px;
+    
+    
+}
+
+.container li{
+    display: inline-block;
+vertical-align: top;
+width: 140px;
+margin: 2px;
+padding-bottom: 10px;
+}
+
+.container h2 {
+    font-size: 24px;
+font-weight: bold;
+text-transform: uppercase;
+margin-bottom: 10px;
+}
+
+.container a{
+    color: #333;
+font-size: 14px;
+text-align: center;
+text-decoration: none;
+}

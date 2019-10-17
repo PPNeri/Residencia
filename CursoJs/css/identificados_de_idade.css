@@ -1,0 +1,19 @@
+body{
+    background-color: blue;
+     
+}
+div{
+    background-color: white;
+    border-radius: 25px;
+    padding: 5px;
+    width: 10cm;
+    margin-left: 12cm;
+    margin-top: 10px;
+}
+h1{
+    color:white;
+    text-align: center;
+}
+footer{
+    text-align: center;
+}

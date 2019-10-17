@@ -1,0 +1,7 @@
+
+    .especial {
+    color: black; /* restaura cor do especial */
+    }
+    p:not(.especial) {
+        color: orangered;
+        }

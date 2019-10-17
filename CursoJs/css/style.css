@@ -1,10 +1,8 @@
-#btn-soma{
-    position: relative;
-   
+div{
+    width: 10cm;
+    height: 10cm;
+    font-size: 25pt;
+    text-align: center;
+    padding-top:20px; 
     
-
-}
-input{
-    font:normal 18pt Arial;
-    width:100px;
 }

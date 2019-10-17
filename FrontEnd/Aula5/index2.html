@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="numero">
+
+
+    </p>
+    <p id="list">
+
+
+    </p>
+    <script>
+        //var contador=100;
+        
+        var contador=0;
+        var lista=["Banana","Pera","Maça"];
+        //var lista=["Banana"];
+                
+        numero.innerHTML=contador;
+        
+        list.innerHTML=lista;
+        
+        setInterval(function(){
+            contador++;
+
+            if(contador==10){
+                contador=0;
+                lista.pop();
+                list.innerHTML=lista;
+
+            }
+            if(lista.length==0){
+                list.innerHTML="lista Vazia";
+                window.open("https://google.com",'_blank');
+                //window.location.href="https://google.com";
+                lista=[1000];
+            }
+                       
+            
+            numero.innerHTML=contador;
+
+        },1000);
+
+    </script>
+</body>
+</html>

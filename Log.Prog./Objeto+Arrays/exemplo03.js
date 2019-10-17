@@ -1,5 +1,5 @@
 let notas=[7.8,6.3,8.7,10,5.6,5.0,10.0,8.0];
-let alunos=["Victor","Paulo","New","Luiza","Maria","Gabriela"];
+let alunos=["Victor","Paulo","New","Luiza","Maria","Gabriela","Pedrita","roberta"];
 
 //Imprime alunos e notas
 console.log(`Notas----> ${notas}`);
@@ -21,6 +21,6 @@ console.log("Primeira nota :" +firstGrade)
 firstStudent=alunos.shift();
 console.log("Primeiro aluno ",firstStudent);
 //Remover um elmento da posiçao 2---------(splice)
-nota5=notas.splice(3,1);
-aluno5=alunos.splice(3,1);
+nota5=notas.slice(2,6);
+aluno5=alunos.splice(3,2);
 console.log(`5º nota->${nota5} do aluno->${aluno5}`)

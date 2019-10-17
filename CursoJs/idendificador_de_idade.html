@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/identificados_de_idade.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Identificador de Idade</h1>
+    </header>
+    <section>
+        <div>
+            <p>Ano de Nascimento: <input type="number" name="txtano" id="txtano" min="0">  
+            </p>
+            <p>Sexo:
+                <input type="radio" name="radsex" id='masc' checked>
+                <label for="masc">Masculino</label>
+                <input type="radio" name="radsex" id="fem">
+                <label for="fem">Feminino</label>
+            </p>
+            <p>
+                <input type="button" value="Verificar" onclick="verificar()">
+            </p>
+        </div>
+
+        <div id="resp">
+            Preencha os dados acima para ver o resultado
+
+        </div>
+        
+    </section>
+    <footer>
+        <p>
+            &Copy PedroNeri
+        </p>
+    </footer>
+    <script src="js/identificador_de_idade.js"></script>
+</body>
+</html>
