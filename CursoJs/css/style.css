@@ -1,8 +1,11 @@
 div{
-    width: 10cm;
-    height: 10cm;
-    font-size: 25pt;
-    text-align: center;
-    padding-top:20px; 
+    font-size: 18pt; 
+    background-color: white;
+    width:10cm;
+    margin: 0 12.75cm;
+    border-radius: 25px;
     
+}
+body{
+    background-color:blue;
 }

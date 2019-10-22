@@ -1,0 +1,10 @@
+.sec{
+    font-size: 18pt; 
+    background-color: white;
+    margin: 0 12.75cm;
+    border-radius: 25px;
+    padding: 20px;
+}
+body{
+    background-color:blue;
+}

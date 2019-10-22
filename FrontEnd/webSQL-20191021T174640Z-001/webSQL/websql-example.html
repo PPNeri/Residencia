@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+	
+	<head>
+	<meta charset="UTF-8" />
+	<title>Teste</title>
+	
+	<style type="text/css">
+		body {font-family: Helvetica, sans-serif; font-size: 100%; line-height: 1.4em}
+		input, button {width: 25em; font-size: 100%; padding: .25em}
+	</style>
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		// Generic error callback for db transactions
+		var errCallback = function(){
+			alert("Oh noes! There haz bin a database error!");
+		}
+	
+		// Open / initialise the db - this will fail in browsers like Firefox & IE
+		var db = openDatabase("teste", "1.0", "teste UVA", 1024*1024*20);
+	 
+		// Create teste table if required
+		db.transaction(function(transaction){
+			transaction.executeSql("CREATE TABLE IF NOT EXISTS teste (" +
+				"id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+				"meta TEXT NOT NULL, conteudo TEXT NOT NULL);");
+		});
+	
+		// This is the SAVE function
+		var saveTeste = function(meta, conteudo, successCallback){
+			db.transaction(function(transaction){
+				transaction.executeSql(("INSERT INTO teste (meta, conteudo) VALUES (?, ?);"), 
+				[meta, conteudo], function(transaction, results){successCallback(results);},
+ errCallback);				
+			});
+		};
+		
+		// This is a LOAD function, which pulls all winkles for a given location
+		var loadTeste = function(meta, successCallback){
+			db.transaction(function(transaction){
+				transaction.executeSql(("SELECT * FROM teste WHERE meta=?"), [meta],
+					function(transaction, results){successCallback(results);}, errCallback);
+				});
+		};
+
+		var loadTesteFull = function(meta, successCallback){
+			db.transaction(function(transaction){
+				transaction.executeSql(("SELECT * FROM teste"), null,
+					function(transaction, results){successCallback(results);}, errCallback);
+				});
+		};
+	
+		// Document ready event. Time for some subversive injection, hurr hurr
+		$(function(){
+			var form = $("form");
+		
+			// Callback when loading data (@see showWinkles())
+			var updatePage = function(results){
+				var list = $("#teste-list");
+				list.empty();
+				console.dir(results);
+				if (results.rows.length==0){
+					alert("Alas, there be no metas here.");
+				} else {
+					$.each(results.rows, function(rowIndex){
+						var row = results.rows.item(rowIndex);
+						list.append( "<li>" + row.meta + ", " + row.conteudo + "</li>");
+					});
+				}
+			};
+		 
+			// Override the default form submit in favour of our code
+			form.submit(function(event){
+				event.preventDefault();
+				saveTeste($('#meta').val(), $('#conteudo').val(), function(){
+					alert($('#meta').val() + "'s data has been saved!");
+					$('#show-me').click(function(){loadTesteFull($('#where').val(), updatePage);});
+				})
+			});
+			loadTesteFull($('#where').val(), updatePage);
+			// Bind winkle listing to a button in the page
+			$('#show-me').click(function(){loadTeste($('#where').val(), updatePage);});
+		});
+	</script>
+</head>
+
+<body>
+	<h1>Teste de Web SQL</h1>
+	<p>initialise the db - this will fail in browsers like Firefox & IE</p>
+
+	<form>
+		<h2>teste &amp; conteudo:</h2>
+		<p><input type="text" id="meta" name="meta" class="name" placeholder="meta" /></p>
+		<p><input type="text" id="conteudo" name="conteudo" class="location" placeholder="conteudo" /></p>
+		<p><input type="submit" value="Salvar" /></p>
+	</form>
+	
+	<p>Type in a meta below &amp; then click the button to see what we&#8217;ve got:</p>
+	<p><input id="where" name="where" placeholder="meta" /></p>
+	<p><input type="button" id="show-me" value="Show" /></p>
+
+	<h2>Lista de Metas</h2>
+	<ul id="teste-list"><!-- set by updatePage() --></ul>
+</body>
+</html>

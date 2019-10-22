@@ -1,23 +1,16 @@
-function verificar(){
+function contar(){
+
     
-    let data=new Date();
-    let ano=data.getFullYear;
-    let resp=document.querySelector('div#resp');
-    let entradaAno=document.getElementById('txtano');
+    
+    let start=Number(document.getElementById("inicio").value)
+    let end=Number(document.getElementById("fim").value)
+    let step=Number(document.getElementById("passo").value)
+    let asn=document.getElementById("resp")
 
-    if (ano<Number(entradaAno.value) || entradaAno.value.length==0){
-        alert("Insira um ano Válido")
-    }else{
-        let entradasexo=document.getElementsByName("radsex")
-        let idade=ano-Number(entradaAno.value);
-        resp.innerHTML=`Idade é ${idade}`;
-
-
+    for(let i=start;i<=end;i+=step){
+            asn.innerHTML+=` ${i} \u{1F449}`;
+            
     }
-
-
-
-
 
 
 }

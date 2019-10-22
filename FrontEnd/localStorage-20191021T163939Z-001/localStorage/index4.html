@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<div>
+    <input type="text" id="nome" placeholder="Nome">
+    <input type="text" id="valor" placeholder="Valor">
+    <input type="button" value="Adiciona" onclick="Add()">
+
+
+
+
+</div>
+<div >
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody id="itensView">
+            
+        </tbody>
+    </table>
+</div>
+<script>
+    function Add() {
+
+        if(typeof(Storage) !== "undefined") {
+            var itens;
+
+            if (sessionStorage.lista) {
+
+                itens = JSON.parse(sessionStorage.getItem("lista"));
+
+            } else {
+                itens = [];
+            }
+
+            itens.push( {name:name.value,
+            value:valor.value});
+            document.getElementById("itensView").innerHTML="";
+            
+            itens.forEach((item)=>{
+                document.getElementById("itensView").innerHTML+=
+                       `<tr><td>${itens.name}</td>`
+                       +`<td>${item.value}</td></tr>`;
+
+            });
+
+            sessionStorage.lista=JSON.stringify(itens);
+
+
+           //document.getElementById("result").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+        } else {
+            document.getElementById("itensView").
+            innerHTML = "Sorry, your browser does not support web storage...";
+        }
+    }
+    </script>
+</body>
+</html>
+

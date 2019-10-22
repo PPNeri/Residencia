@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+        <input type="text" id="cep" >
+        <input type="button" onclick="a()">
+        <div id="demo">
+    
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+    <script>
+        $(document).ready(function(){
+            $("input").change(function(){
+                $.get("https://viacep.com.br/ws/"+$("#cep").val()+"/json/",
+                function(data, status){
+                    $("#demo").text("Carregado");
+                    alert("Data: " + data.logradouro 
+                    + "\nStatus: " + status);
+
+                });
+                $("#demo").text("LOADING....");
+            });
+        });
+    
+    </script>
+</body>
+</html>
