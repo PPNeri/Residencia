@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      
+    </style>
+</head>
+<body>
+        <select id="dogs" onchange="descricao()">
+          </select>
+        <div id="demo">
+            
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+    <script>
+        $(document).ready(function(){            
+      
+                $.get("https://dog.ceo/api/breeds/list/all",
+                function(data, status){
+                    $("#demo").text("Carregado");
+                    var raca = Object.keys(data.message);
+                    console.log(raca);
+                    raca.forEach((val)=>{
+                        $("#dogs").append(`<option value="${val}" >${val}</option>`);
+                    });
+
+                });
+                $("#demo").text("LOADING....");            
+        });
+        function descricao(){
+            let selected = $("#dogs").val();
+            $.get("https://dog.ceo/api/breed/"+selected+"/images",
+                function(data, status){
+                  $("#demo").empty();
+                    var images = data.message;
+                    console.log(images);
+                    $("#demo").append(`<image src="${images[1]}">`);
+                    /*images.forEach((val)=>{
+                      $("#demo").append(`<image src="${val}">`);
+                    });*/
+                });
+        }    
+    </script>
+</body>
+</html>

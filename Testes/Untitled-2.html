@@ -1,0 +1,82 @@
+<html>
+    <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <h2>Exemplo Ajax</h2>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <form id="form">
+                        
+                        <input class="form-control" type="text" name="nome" id="nome">
+                        <input class="form-control" type="email" name="email" id="email">
+                        <textarea class="form-control" name="msg" id="msg"></textarea>
+                        <button class="btn btn-success" type="submit">Submit</button>
+                    </form>
+                </div>
+                <div class="col-4" id="mensagens">
+                    
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $( "#form" ).submit(function( event ) {
+                var dados = {
+                    nome : "",
+                    email  : "",
+                    msg       : "",                    
+            };
+                dados.nome = $("#nome").val();
+                dados.email = $("#email").val();
+                dados.msg = $("#msg").val();
+                
+            //alert( JSON.stringify(dados) );
+            $.post('https://mensagem-1db97.firebaseio.com/mensagem.json',
+                JSON.stringify(dados),
+                function () {
+                    alert("success");
+                } 
+            );
+            event.preventDefault();
+            //getMsg();
+            $("#mensagens").append('<div class="card" style="width: 18rem;">'+
+                '<div class="card-body">'+
+                    '<h5 class="card-title">'+dados.nome+'</h5>'+
+                    '<h6 class="card-subtitle mb-2 text-muted">'+dados.email+'</h6>'+
+                    '<p class="card-text">'+dados.msg+'</p>'+
+                '</div>'+
+            '</div>');
+        }); 
+
+
+        function getMsg(){
+            $("#mensagens").empty();
+            $.get("https://mensagem-1db97.firebaseio.com/mensagem.json", function(data, status){                
+                $.each( data, function( key, value ) {
+                    console.log( key + ": " + value.nome );
+                    var dados = value;
+                    $("#mensagens").append('<div class="card" style="width: 18rem;">'+
+                        '<div class="card-body">'+
+                            '<h5 class="card-title">'+dados.nome+'</h5>'+
+                            '<h6 class="card-subtitle mb-2 text-muted">'+dados.email+'</h6>'+
+                            '<p class="card-text">'+dados.msg+'</p>'+
+                        '</div>'+
+                    '</div>');
+                });
+            });
+        }
+
+        $(document).ready(function(){
+            getMsg();
+        });
+        </script>
+    </body>
+</html>
