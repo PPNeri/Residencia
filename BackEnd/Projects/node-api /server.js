@@ -5,7 +5,11 @@ const mongoose=require('mongoose');//carrega o modulo do mangoose
 
 const app=express();//instacia uma variável app do modulo express
 
+const cors=require('cors');
+
 app.use(express.json());//Insomnia para usra o metodo post 
+
+app.use(cors());//LIBERAÇÃO DE ACESSO ENTRE PARENTESES COLOCA SE AS ECXEÇÕES
 
 const requireDir=require('require-dir');//Reegistrar todos o diretorios( NECESSÁRIO NPM INSTALL REQUIRE-DIR    )
 

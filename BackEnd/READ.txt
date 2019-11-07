@@ -1,18 +1,35 @@
-npm install node
-npm install express
+------------------------------------DEPENDÊNCIAS-------------------------------------------------------
+
 npm init -y                     Instala as dependencias pacote package.json
+npm install express --save
+npm install body-parser --save
+npm install require-dir --save
+npm install sequelize --save
+npm install cors --save                Modulo CORS 
+npm install --save-dev nodemon         Cria devDependencias nodemon no package.jason 
+npm install pg --save
+npm install express-generator -g
+npm install -g sequelize-cli
+-------------------------------------MONGOOSE--------------------------------------------------------
+
 npm install mongoose-paginate   Paginação
+npm install mongoose            ORM
+npm install node
+
 ----------------------------------------------------------------------------------------------------
 npm install -D nodemon -Dependencia de desenvolvimento--Cria uma dependencia dentro do package.jason
 
 passamos dentro da propriedade script:"test": "echo \"Error: no test specified\" && exit 1",
 "dev":"nodemon server.js"<--Atalho para rodar o servido com o comando: "npm run dev"
----------------------------------------------------------------------------------------------------
+
+-------------------------------------DOCKER---------------------------------------------------------
 docker images
 docker ps
 docker ps -a
+
 docker run --name mongodb -p 27017:27017 -d mongo
----------------------------------------------------------------------------------------------------
+
+--------------------------------------ROBO 3T--------------------------------------------------------
 
 Abrir robo 3T caminho:/usr/local/bin/robomongo/robo3t-1.3.1-linux-x86_64-7419c406/bin
 Instalar Pacote NPM : npm install mongoose.

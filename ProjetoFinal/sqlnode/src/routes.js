@@ -1,10 +1,11 @@
-const express=require('express');
 
+const express=require('express');
+const routes=express.Router();
+//Controllers
 const UserController=require('./controllers/UserController');
 const ImmobileController=require('./controllers/ImmobileController');
 const ReportController=require('./controllers/ReportController');
 
-const routes=express.Router();
 
 routes.get('/users',UserController.index);  
 routes.post('/users',UserController.store);
