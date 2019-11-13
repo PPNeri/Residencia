@@ -1,0 +1,182 @@
+
+<div class="grid-option">
+<h2 class="title-single">Nossas Propriedades</h2>
+  <form>
+    <select class="custom-select">
+      <option selected>Todas</option>
+      <option value="1">Até R$ 1.000.000</option>
+      <option value="2">Até R$ 2.000.000</option>
+      <option value="3">Até R$ 3.000.000</option>
+    </select>
+  </form>
+</div>
+
+{{#each imoveis}}
+  <section>
+    <p></p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <span class="color-text-a"><h1>ID: {{id}}</h1></span>
+            <p>Corretor responsavel: {{corretor_cpf}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="property-grid grid">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+        </div>
+        <div class="col-md-4">
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <img src="{{img1}}" alt="" class="img-a img-fluid">
+            </div>
+            <div class="card-overlay">
+              <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                  <h2 class="card-title-a">
+                    <a href="{{img1}}">{{tipo}}
+                      <br />{{endereco}}</a>
+                  </h2>
+                </div>
+                <div class="card-body-a">
+                  <div class="price-box d-flex">
+                    <a class="price-a" href="/list/corretor/{{corretor_cpf}}">Comprar | R$ {{valor}}</a>
+                  </div>
+                  <a href="/list/imoveis/{{id}}" class="link-a">Clique para ver mais</a>
+                </div>
+                <div class="card-footer-a">
+                  <ul class="card-info d-flex justify-content-around">
+                    <li>
+                      <h4 class="card-info-title">Área</h4>
+                      <span>70m
+                        <sup>2</sup>
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Quartos</h4>
+                      <span>{{n_quartos}}</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Banheiros</h4>
+                      <span>{{banheiros}}</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Garagens</h4>
+                      <span>{{garagem}}</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <img src="{{img2}}" alt="" class="img-a img-fluid">
+            </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <img src="{{img3}}" alt="" class="img-a img-fluid">
+            </div>
+            </div>
+        </div>
+       
+  </section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        <div class="widget-a">
+          <div class="w-header-a">
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/each}}
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="w-header-a">
+          <img src="/logo2.png">
+          <h3 class="w-title-a text-brand">PD<br>Imóveis</h3>
+        </div>
+        <div class="w-body-a">
+            <p class="w-text-a color-text-a">
+              Uma das maiores imobiliárias da Região Serrana, tendo imóveis nas principais cidades; como Petrópolis, 
+              Teresópolis e Nova Friburgo! Venha curtir a serra fluminense conosco, com toda sua história, tranquilidade e beleza natural! 
+            </p>
+          </div>
+          <br>
+        <nav class="nav-footer">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="/">Home</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="index.html#servicos">Nossos Serviços</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="/property-single">Propriedades</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="/contato">Contato</a>
+              </li>
+            <li class="list-inline-item">
+                <a href="/sobre">Sobre</a>
+              </li>
+          </ul>
+        </nav>
+        <div class="socials-a">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="social.html">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="social.html">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="social.html">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="social.html">
+                <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="copyright-footer">
+          <p class="copyright color-text-a">
+            &copy; Copyright
+            <span class="color-a">PD Imóveis</span> Todos os direitos reservados.
+          </p>
+        </div>
+        <div class="credits">
+          <span class="color-a">Desenvolvido por PD Software &copy; </span> Todos os direitos reservados.
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

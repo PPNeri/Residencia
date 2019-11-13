@@ -1,0 +1,48 @@
+<h2>Editar Corretor</h2>
+<form action="/register/corretor" method="POST">
+      <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">CPF</label>
+      <input value="{{corretor.cpf}}" type="text" class="form-control" id="cpf" placeholder="CPF" name="cpf">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">CRECI</label>
+      <input value="{{corretor.creci}}" type="text" class="form-control" id="inputcreci" placeholder="CRECI" name="creci">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Nome</label>
+      <input type="text" value="{{corretor.nome}}" class="form-control" id="inputEmail4" placeholder="Nome" name="nome">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Data de Nascimento</label>
+      <input type="date" value="{{corretor.dataNasc}}" class="form-control" id="inputdate" placeholder="Nascimento"name="data_nasc">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Genero</label>
+      <input type="text" value="{{corretor.genero}}"class="form-control" id="inputgenero" placeholder="M/F"name="genero">
+    </div>
+    
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" value="{{corretor.email}}"class="form-control" id="inputEmail4" placeholder="Email" name="email">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Password</label>
+      <input type="password" class="form-control" id="inputPassword4" placeholder="Password" name="senha">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputimg">Escolha sua foto</label>
+      <input type="file" value="{{corretor.img}}"class="form-control" id="inputimg" placeholder="" name="img">
+    </div>
+  </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Editar Corretor</button>
+</form>

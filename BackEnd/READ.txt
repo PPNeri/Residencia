@@ -10,17 +10,24 @@ npm install --save-dev nodemon         Cria devDependencias nodemon no package.j
 npm install pg --save
 npm install express-generator -g
 npm install -g sequelize-cli
+
 -------------------------------------MONGOOSE--------------------------------------------------------
 
 npm install mongoose-paginate   Paginação
 npm install mongoose            ORM
 npm install node
 
-----------------------------------------------------------------------------------------------------
+----------------------------------Nodemon------------------------------------------------------------------
 npm install -D nodemon -Dependencia de desenvolvimento--Cria uma dependencia dentro do package.jason
 
 passamos dentro da propriedade script:"test": "echo \"Error: no test specified\" && exit 1",
 "dev":"nodemon server.js"<--Atalho para rodar o servido com o comando: "npm run dev"
+
+
+-----------------------------------Mysql-------------------------------------------------------------------
+npm install --save mysql2
+
+
 
 -------------------------------------DOCKER---------------------------------------------------------
 docker images

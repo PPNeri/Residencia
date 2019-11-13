@@ -3,7 +3,7 @@ const dbconfig=require('./database')
 const Post=require('../models/Post')
 
 const User=dbconfig.define('users',{
-    
+        
     firstName:{
         type:Sequelize.STRING,
         required:true

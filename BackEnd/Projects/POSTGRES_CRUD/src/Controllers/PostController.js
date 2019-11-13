@@ -9,6 +9,7 @@ async index (req,res){
 
 async show(req,res){
     const post=await Post.findByPk(req.params.id);
+    console.log(post)
     return res.json(post);
 },
 

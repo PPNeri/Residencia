@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PD Imóveis - Propriedades</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+ <!-- Favicons -->
+ <link href="img/favicon.ico" rel="icon">
+ <link href="img/animated_favicon1.gif" rel="ppd-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+
+
+<!--div class="click-closed"></div-->
+  <!--/ Form Search Star /-->
+  <!--div class="box-collapse">
+    <div class="title-box-d">
+      <h3 class="title-d">Procure o Imóvel</h3>
+    </div>
+    <span class="close-box-collapse right-boxed ion-ios-close"></span>
+    <div class="box-collapse-wrap form">
+      <form class="form-a">
+        <div class="row">
+          <div class="col-md-12 mb-2">
+            <div class="form-group">
+              <label for="Type">Busca</label>
+              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Busca">
+            </div>
+          </div>
+          <div class="col-md-6 mb-2">
+            <div class="form-group">
+              <label for="Type">Tipo</label>
+              <select class="form-control form-control-lg form-control-a" id="Type">
+                <option>Todos</option>
+                <option>Casa</option>
+                <option>Apartamento</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 mb-2">
+            <div class="form-group">
+              <label for="city">Cidade</label>
+              <select class="form-control form-control-lg form-control-a" id="city">
+                <option>Todas</option>
+                <option>Petrópolis</option>
+                <option>Teresópolis</option>
+                <option>Nova Friburgo</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 mb-2">
+            <div class="form-group">
+              <label for="bedrooms">Banheiros</label>
+              <select class="form-control form-control-lg form-control-a" id="bedrooms">
+                <option>Indiferente</option>
+                <option>01</option>
+                <option>02</option>
+                <option>03</option>
+                <option>04</option>
+                <option>05</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 mb-2">
+            <div class="form-group">
+              <label for="garages">Garagens</label>
+              <select class="form-control form-control-lg form-control-a" id="garages">
+                <option>Indiferente</option>
+                <option>01</option>
+                <option>02</option>
+                <option>03</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 mb-2">
+            <div class="form-group">
+              <label for="bathrooms">Quartos</label>
+              <select class="form-control form-control-lg form-control-a" id="bathrooms">
+                <option>Indiferente</option>
+                <option>01</option>
+                <option>02</option>
+                <option>03</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 mb-2">
+            <div class="form-group">
+              <label for="price">Valor</label>
+              <select class="form-control form-control-lg form-control-a" id="price">
+                <option>Indiferente</option>
+                <option>R$500.000,00</option>
+                <option>R$1.000.000,000,00</option>
+                <option>R$1.500,000,00</option>
+                <option>R$2.000.000,00</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-b">Buscar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div-->
+  <!--/ Form Search End /-->
+
+ <!--/ Nav Star /-->
+ <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+      aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <img src="img/logo2.png">
+    <a class="navbar-brand text-brand" href="index.html"><strong>PD</strong><br><span class="color-b">Imóveis</span></a>
+    <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none" data-toggle="collapse"
+      data-target="#navbarTogglerDemo01" aria-expanded="false">
+      <span class="fa fa-search" aria-hidden="true"></span>
+    </button>
+    <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="index.html#servicos">Nossos Serviços</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="property-grid.html">Propriedades</a>
+        </li>
+        <!--li class="nav-item">
+            <a class="nav-link" href="login.html">Área do Corretor</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cadastro.html">Cadastro</a>
+        </li-->
+        <li class="nav-item">
+            <a class="nav-link" href="about.html">Sobre</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="index.html#contato">Contato</a>
+        </li>
+      </ul>
+    </div>
+    <!--button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block" data-toggle="collapse"
+      data-target="#navbarTogglerDemo01" aria-expanded="false">
+      <span class="fa fa-search" aria-hidden="true"></span>
+    </button-->
+  </div>
+</nav>
+<!--/ Nav End /-->
+
+  <!--/ Intro Single star /-->
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single">Nossas Propriedades</h1>
+            <span class="color-text-a">Todas as Propriedades</span>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="#">Home</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Propriedades
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Intro Single End /-->
+
+  <!--/ Property Grid Star /-->
+  <section class="property-grid grid">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="grid-option">
+            <form>
+              <select class="custom-select">
+                <option selected>Todas</option>
+                <option value="1">Até R$ 1.000.000</option>
+                <option value="2">Até R$ 2.000.000</option>
+                <option value="3">Até R$ 3.000.000</option>
+              </select>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <img src="img/property-5.jpg" alt="" class="img-a img-fluid">
+            </div>
+            <div class="card-overlay">
+              <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                  <h2 class="card-title-a">
+                    <a href="imovel_1.html">Apartamento
+                      <br /> Itaipava All Suítes</a>
+                  </h2>
+                </div>
+                <div class="card-body-a">
+                  <div class="price-box d-flex">
+                    <a class="price-a" href="imovel_1.html">Comprar | $ 550.000</a>
+                  </div>
+                  <a href="imovel_1.html" class="link-a">Clique para ver mais
+                    <span class="ion-ios-arrow-forward"></span>
+                  </a>
+                </div>
+                <div class="card-footer-a">
+                  <ul class="card-info d-flex justify-content-around">
+                    <li>
+                      <h4 class="card-info-title">Área</h4>
+                      <span>70m
+                        <sup>2</sup>
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Quartos</h4>
+                      <span>2</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Banheiros</h4>
+                      <span>3</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Garagens</h4>
+                      <span>1</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <img src="img/property-1.jpg" alt="" class="img-a img-fluid">
+            </div>
+            <div class="card-overlay">
+              <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                  <h2 class="card-title-a">
+                    <a href="imovel_2.html">Casa
+                      <br /> Agriões</a>
+                  </h2>
+                </div>
+                <div class="card-body-a">
+                  <div class="price-box d-flex">
+                    <a class="price-a" href="imovel_2.html">Comprar | $ 1.200.000</a>
+                  </div>
+                  <a href="imovel_2.html" class="link-a">Clique para ver mais
+                    <span class="ion-ios-arrow-forward"></span>
+                  </a>
+                </div>
+                <div class="card-footer-a">
+                  <ul class="card-info d-flex justify-content-around">
+                    <li>
+                      <h4 class="card-info-title">Área</h4>
+                      <span>116m
+                        <sup>2</sup>
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Quartos</h4>
+                      <span>3</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Banheiros</h4>
+                      <span>2</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Garagens</h4>
+                      <span>3</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <img src="img/property-6.jpg" alt="" class="img-a img-fluid">
+            </div>
+            <div class="card-overlay">
+              <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                  <h2 class="card-title-a">
+                    <a href="imovel_3.html">Casa
+                      <br /> Pinheiros</a>
+                  </h2>
+                </div>
+                <div class="card-body-a">
+                  <div class="price-box d-flex">
+                    <a class="price-a" href="imovel_3.html">Comprar | $ 3.300.000</a>
+                  </div>
+                  <a href="imovel_3.html" class="link-a">Clique para ver mais
+                    <span class="ion-ios-arrow-forward"></span>
+                  </a>
+                </div>
+                <div class="card-footer-a">
+                  <ul class="card-info d-flex justify-content-around">
+                    <li>
+                      <h4 class="card-info-title">Área</h4>
+                      <span>726m
+                        <sup>2</sup>
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Quartos</h4>
+                      <span>5</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Banheiros</h4>
+                      <span>8</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Garagens</h4>
+                      <span>4</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <img src="img/property-4.jpg" alt="" class="img-a img-fluid">
+            </div>
+            <div class="card-overlay">
+              <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                  <h2 class="card-title-a">
+                    <a href="imovel_4.html">Apartamento
+                      <br /> Granja Brasil</a>
+                  </h2>
+                </div>
+                <div class="card-body-a">
+                  <div class="price-box d-flex">
+                    <a class="price-a" href="imovel_4.html">Comprar | $ 3.600.000</a>
+                  </div>
+                  <a href="imovel_4.html" class="link-a">Clique para ver mais
+                    <span class="ion-ios-arrow-forward"></span>
+                  </a>
+                </div>
+                <div class="card-footer-a">
+                  <ul class="card-info d-flex justify-content-around">
+                    <li>
+                      <h4 class="card-info-title">Área</h4>
+                      <span>410m
+                        <sup>2</sup>
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Quartos</h4>
+                      <span>4</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Banheiros</h4>
+                      <span>5</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Garagens</h4>
+                      <span>4</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <img src="img/property-2.jpg" alt="" class="img-a img-fluid">
+            </div>
+            <div class="card-overlay">
+              <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                  <h2 class="card-title-a">
+                    <a href="imovel_5.html">Casa
+                      <br /> São Sebastião</a>
+                  </h2>
+                </div>
+                <div class="card-body-a">
+                  <div class="price-box d-flex">
+                    <a class="price-a" href="imovel_5.html">Comprar | $ 399.000</a>
+                  </div>
+                  <a href="imovel_5.html" class="link-a">Clique para ver mais
+                    <span class="ion-ios-arrow-forward"></span>
+                  </a>
+                </div>
+                <div class="card-footer-a">
+                  <ul class="card-info d-flex justify-content-around">
+                    <li>
+                      <h4 class="card-info-title">Área</h4>
+                      <span>120m
+                        <sup>2</sup>
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Quartos</h4>
+                      <span>3</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Banheiros</h4>
+                      <span>3</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Garagens</h4>
+                      <span>2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <img src="img/property-3.jpg" alt="" class="img-a img-fluid">
+            </div>
+            <div class="card-overlay">
+              <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                  <h2 class="card-title-a">
+                    <a href="imovel_6.html">Casa
+                      <br /> Barra do Imbuí</a>
+                  </h2>
+                </div>
+                <div class="card-body-a">
+                  <div class="price-box d-flex">
+                    <a class="price-a" href="imovel_6.html">Comprar | $ 950.000</a>
+                  </div>
+                  <a href="imovel_6.html" class="link-a">Clique para ver mais
+                    <span class="ion-ios-arrow-forward"></span>
+                  </a>
+                </div>
+                <div class="card-footer-a">
+                  <ul class="card-info d-flex justify-content-around">
+                    <li>
+                      <h4 class="card-info-title">Área</h4>
+                      <span>300m
+                        <sup>2</sup>
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Quartos</h4>
+                      <span>3</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Banheiros</h4>
+                      <span>9</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Garagens</h4>
+                      <span>4</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!--div class="row">
+        <div class="col-sm-12">
+          <nav class="pagination-a">
+            <ul class="pagination justify-content-end">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">
+                  <span class="ion-ios-arrow-back"></span>
+                </a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">2</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">3</a>
+              </li>
+              <li class="page-item next">
+                <a class="page-link" href="#">
+                  <span class="ion-ios-arrow-forward"></span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div-->
+    </div>
+  </section>
+  <!--/ Property Grid End /-->
+
+
+<!--/ footer Star /-->
+<section class="section-footer" id="logo">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        <div class="widget-a">
+          <div class="w-header-a">
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="w-header-a">
+          <img src="img/logo2.png">
+          <h3 class="w-title-a text-brand">PD<br>Imóveis</h3>
+        </div>
+        <div class="w-body-a">
+            <p class="w-text-a color-text-a">
+              Uma das maiores imobiliárias da Região Serrana, tendo imóveis nas principais cidades; como Petrópolis, 
+              Teresópolis e Nova Friburgo! Venha curtir a serra fluminense conosco, com toda sua história, tranquilidade e beleza natural! 
+            </p>
+          </div>
+          <br>
+        <nav class="nav-footer">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="index.html">Home</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="index.html#servicos">Nossos Serviços</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="property-grid.html">Propriedades</a>
+            </li>
+            <!--li class="list-inline-item">
+              <a href="login.html">Área do Corretor</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="cadastro.html">Cadastro</a>
+            </li-->
+            <li class="list-inline-item">
+                <a href="index.html#contato">Contato</a>
+              </li>
+            <li class="list-inline-item">
+                <a href="about.html">Sobre</a>
+              </li>
+          </ul>
+        </nav>
+        <div class="socials-a">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="social.html">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="social.html">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="social.html">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="social.html">
+                <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="copyright-footer">
+          <p class="copyright color-text-a">
+            &copy; Copyright
+            <span class="color-a">PD Imóveis</span> Todos os direitos reservados.
+          </p>
+        </div>
+        <div class="credits">
+          <span class="color-a">Desenvolvido por PD Software &copy; </span> Todos os direitos reservados.
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--/ Footer End /-->
+
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/popper/popper.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/scrollreveal/scrollreveal.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+
+</html>
