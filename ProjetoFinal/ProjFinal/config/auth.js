@@ -36,13 +36,9 @@ passport.use(new localStrategy({usernameField:'email',passwordField:'senha'},(em
     
     passport.deserializeUser((cpf,done)=>{
         console.log('deserialized')
-        // corretor.findByPk(cpf,(erro,corretor)=>{
-        //     console.log('deserialized2')
-        //     done(erro,corretor)
-        // })
         corretor.findByPk(cpf)
         .then(corretor => {
-            console.log(corretor);
+            console.log("Autenticado");
             done(null, corretor);
             
         })

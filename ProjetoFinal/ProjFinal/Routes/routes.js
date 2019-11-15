@@ -104,6 +104,12 @@ passport.authenticate("local",{
 
 })
 
+router.get('/logout',(req,res)=>{
+    req.logout();
+    req.flash('success_msg','deslogado com sucesso')
+    res.redirect('/')
+})
+
 
 //EXPORTAR O ROUTER O MÓDULO EXPORTS RECEBE O ROUTER
 module.exports=router

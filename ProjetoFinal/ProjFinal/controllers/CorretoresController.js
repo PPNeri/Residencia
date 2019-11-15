@@ -25,7 +25,8 @@ module.exports={
                 genero:req.body.genero,
                 email:req.body.email,
                 senha:bcrypt.hashSync(req.body.senha,10),
-                img:req.body.img
+                img:req.body.img,
+                eAdmin:1
                 
             }).then(function(){
                 res.redirect('/')
@@ -91,7 +92,7 @@ async editado(req,res){
             corretor.genero=req.body.genero
             corretor.email=req.body.email
             corretor.img=req.body.img
-
+            
             corretor.save().then(()=>{
                 req.flash('success_msg',"salvo com sucesso")
                 res.redirect('/')

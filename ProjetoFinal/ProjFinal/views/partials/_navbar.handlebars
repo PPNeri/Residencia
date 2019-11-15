@@ -22,6 +22,7 @@
           <li class="nav-item">
               <a class="nav-link" href="formlogin">Login</a>
           </li>
+{{#if user}}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
@@ -41,11 +42,13 @@
               <a class="dropdown-item" href="list/corretores">Corretores</a>
               <a class="dropdown-item" href="list/imoveis">Imóveis</a>
             </div>
+          <li class="nav-item">
+              <a class="nav-link" href="/logout">Sair</a>
+          </li>
           </li>
         </ul>
+{{else}}
       </div>
     </div>
-  </nav>
-{{#if user}}
-{{else}}
           {{/if}}
+  </nav>

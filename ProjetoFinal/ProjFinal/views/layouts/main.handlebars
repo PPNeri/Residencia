@@ -18,26 +18,17 @@
     <title>PD Imóveis</title>
 
 </head>
-
-
-
 <body>
+  {{>_navbar}}
 
-{{>_navbar}}
-
-<div class="container-fluid mt-4">
-
-
-
-
-
-  {{{body}}}
-
-</div>
-
-
-
-
+  <div class="container-fluid mt-4">
+      {{>_msg}}
+      {{#if error}}
+      <div style="float:right;margin-top:5cm"class="alert alert-danger">{{error}}</div>
+      {{else}}
+      {{/if}}
+      {{{body}}}
+  </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
