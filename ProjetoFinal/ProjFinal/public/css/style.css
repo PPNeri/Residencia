@@ -1090,12 +1090,14 @@ a:hover {
   border-radius: 0;
   width: 200px;
   border-color: #313131;
+  
 }
 
 .property-grid .grid-option .custom-select:hover,
 .property-grid .grid-option .custom-select:active,
 .property-grid .grid-option .custom-select:focus {
   border-color: #313131;
+  background-color: #57A695; 
 }
 
 .property-grid .grid-option .custom-select option {
@@ -1593,7 +1595,7 @@ footer .credits {
 }
 
 .form-a .form-control:focus {
-  box-shadow: none;
+  box-shadow: #57A695;
   border-color: #57A695;
 }
 
@@ -2012,4 +2014,14 @@ footer .credits {
   .box-collapse .title-box-d .title-d {
     font-size: 1.3rem;
   }
+}
+
+#carousel{
+  margin-left: -20px;
+  width: 1289px;
+}
+
+footer{
+  margin-left: -20px;
+  margin-right: -15px;
 }

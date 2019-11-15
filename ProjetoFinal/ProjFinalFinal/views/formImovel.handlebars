@@ -1,0 +1,174 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Cadastre seu imovel</h1>
+<p></p>
+<form action="/register/imovel" method="POST" >
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputcpfcorretor">Cpf do corretor</label>
+      <input name="corretor_cpf" type="text" class="form-control" id="inputtipo" placeholder="cpf do corretor">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputtipo">Tipo</label>
+      <input name="tipo" type="text" class="form-control" id="inputtipo" placeholder="tipo">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputvalor">Valor R$:</label>
+      <input name="valor" type="number" class="form-control" id="inputvalor" placeholder="valor">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputn_quartos">Numero de quartos</label>
+    <input name="n_quartos" type="number" class="form-control" id="inputn_quartos" placeholder="Quartos">
+  </div>
+  
+  <div class="form-group">
+    <label for="inputbanheiros">Numero de Banheiros</label>
+    <input name="banheiros" type="number" class="form-control" id="inputbanheiros" placeholder="Banheiros">
+  </div>
+  
+  <div class="form-group">
+    <label for="inputgaragem">Garagem</label>
+    <input name="garagem" type="text" class="form-control" id="inputgaragem" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-group">
+    <label for="inputEndereco">Endereco</label>
+    <input name="endereco"type="text" class="form-control" id="inputEndereco" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-group">
+    <label for="inputEndereco">Imagens</label>
+    <input name="img1" type="file" class="form-control" id="inputEndereco" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-group">
+    <label for="inputEndereco">Imagens</label>
+    <input name="img2" type="file" class="form-control" id="inputEndereco" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-group">
+    <label for="inputEndereco">Imagens</label>
+    <input name="img3" type="file" class="form-control" id="inputEndereco" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputcidade">Cidade</label>
+      <input name ="cidade" type="text" class="form-control" id="inputCidade">
+    </div>
+    <!--
+    <div class="form-group col-md-4">
+      <label for="inputestado">Estado</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    -->
+    <div class="form-group col-md-2">
+      <label for="inputcep">CEP</label>
+      <input name="cep" type="text"/ class="form-control" id="inputcep">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Confirmo as Informções
+      </label>
+    </div>
+  </div>
+  <button type="submit" style="margin-left:500px; background-color:#57A695; border-color: white;" class="btn btn-primary">Cadastrar Imovel</button>
+</form>
+
+<br>
+
+<footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="w-header-a">
+            <img src="/logo2.png">
+            <h3 class="w-title-a text-brand">PD<br>Imóveis</h3>
+          </div>
+          <div class="w-body-a">
+              <p class="w-text-a color-text-a">
+                Uma das maiores imobiliárias da Região Serrana, tendo imóveis nas principais cidades; como Petrópolis, 
+                Teresópolis e Nova Friburgo! Venha curtir a serra fluminense conosco, com toda sua história, tranquilidade e beleza natural! 
+              </p>
+            </div>
+            <br>
+          <nav class="nav-footer">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="/">Home</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="property-grid2">Propriedades</a>
+              </li>
+              <li class="list-inline-item">
+                <a class="nav-link" href="login">Login</a>
+          </li>
+           <li class="list-inline-item">
+                <a class="nav-link" href="sobre">Sobre</a>
+          </li>
+          <li class="list-inline-item">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Área de Cadastro
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="formCorretor">Corretores</a>
+               <a class="dropdown-item" href="formImovel">Imóveis</a>
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Edição
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="list/corretores">Corretores</a>
+              <a class="dropdown-item" href="list/imoveis">Imóveis</a>
+            </div>
+            </ul>
+          </nav>
+          <div class="socials-a">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="/">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="/">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="/">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="/">
+                  <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="copyright-footer">
+            <p class="copyright color-text-a">
+              &copy; Copyright
+              <span class="color-a">PD Imóveis</span> Todos os direitos reservados.
+            </p>
+          </div>
+          <div class="credits">
+            <span class="color-a">Desenvolvido por PD Software &copy; </span> Todos os direitos reservados.
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--/ Footer End /-->

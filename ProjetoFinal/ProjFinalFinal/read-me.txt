@@ -1,0 +1,26 @@
+1-Criar um diretorio e instalar as seguintes dependencias
+    a) npm init -y (Instala o  package.json)
+    b) npm install --save express( necessário o package.json antes)
+    c) npm install --save express-handlebars
+    d) npm install --save body-parser
+    e) npm install --save mongoose
+    f) npm install --save sequelize
+    g) npm install --save pasport(Autenticação)
+    h) npm install --save passport-local(Autenticação estratégia)
+    i) npm install --save bcryptjs
+    h) npm install --save express-session(Validaçao)
+    h) npm install --save connect-flash(Validaçãoclear)
+
+
+
+2-Nodemon
+    npm install --save nodemon -Dependencia de desenvolvimento
+    Cria uma dependencia dentro do package.jason
+    Passamos dentro da propriedade script:"test": 
+    "echo \"Error: no test specified\" && exit 1",
+    "dev":"nodemon server.js"<--Atalho para rodar o servido com o comando: 
+    "npm run dev"
+
+3-Arquitetar o projeto
+    Criar diretorios e suas configurações
+4-

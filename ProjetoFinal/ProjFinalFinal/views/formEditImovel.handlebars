@@ -1,0 +1,77 @@
+<h1>Editar seu imovel</h1>
+<p></p>
+<form action="/update/imovel" method="POST" >
+<input type="hidden" name ="id" value="{{imovel.id}}">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputcpfcorretor">Cpf do corretor</label>
+      <input value="{{imovel.corretor_cpf}}" name="corretor_cpf" type="text" class="form-control" id="inputtipo" placeholder="cpf do corretor">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputtipo">Tipo</label>
+      <input value="{{imovel.tipo}}"name="tipo" type="text" class="form-control" id="inputtipo" placeholder="tipo">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputvalor">Valor R$:</label>
+      <input value="{{imovel.valor}}" name="valor" type="number" class="form-control" id="inputvalor" placeholder="valor">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputn_quartos">Numero de quartos</label>
+    <input value="{{imovel.n_quartos}}"name="n_quartos" type="number" class="form-control" id="inputn_quartos" placeholder="Quartos">
+  </div>
+  
+  <div class="form-group">
+    <label for="inputbanheiros">Numero de Banheiros</label>
+    <input value="{{imovel.banheiros}}"name="banheiros" type="number" class="form-control" id="inputbanheiros" placeholder="Banheiros">
+  </div>
+  
+  <div class="form-group">
+    <label for="inputgaragem">Garagem</label>
+    <input value="{{imovel.garagem}}"name="garagem" type="text" class="form-control" id="inputgaragem" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-group">
+    <label for="inputEndereco">Endereco</label>
+    <input value="{{imovel.endereco}}"name="endereco"type="text" class="form-control" id="inputEndereco" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-group">
+    <label for="inputEndereco">Imagens</label>
+    <input name="img1" type="file" class="form-control" id="inputEndereco" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-group">
+    <label for="inputEndereco">Imagens</label>
+    <input name="img2" type="file" class="form-control" id="inputEndereco" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-group">
+    <label for="inputEndereco">Imagens</label>
+    <input name="img3" type="file" class="form-control" id="inputEndereco" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputcidade">Cidade</label>
+      <input value="{{imovel.cidade}}"name ="cidade" type="text" class="form-control" id="inputCidade">
+    </div>
+    <!--
+    <div class="form-group col-md-4">
+      <label for="inputestado">Estado</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    -->
+    <div class="form-group col-md-2">
+      <label for="inputcep">CEP</label>
+      <input value="{{imovel.cep}}"name="cep" type="text"/ class="form-control" id="inputcep">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Editar Imovel</button>
+</form>

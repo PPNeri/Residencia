@@ -21,7 +21,7 @@ const Users =connection.define('users',{
 
 
     },
-    Admin:{
+    eAdmin:{
         type:Sequelize.BOOLEAN,
         default:0
     }

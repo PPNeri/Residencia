@@ -11,7 +11,9 @@ module.exports={
     
     async show(req,res){
         const corretor=await Corretor.findByPk(req.params.cpf);
-        return res.json(corretor);
+        res.render('corretorContato',{corretor:corretor})
+        //return res.send(corretor);
+        
     },
     
     async create (req,res){
@@ -77,16 +79,57 @@ async editar(req,res){
 
 },
 
+async editado(req,res){
 
-
-
-
-
-
-
+    Corretor.findOne({where:{'cpf':req.body.cpf}}).then((corretor)=>{
     
+        
+            corretor.cpf=req.body.cpf
+            corretor.creci=req.body.creci
+            corretor.nome=req.body.nome
+            corretor.dataNasc=req.body.data_nasc
+            corretor.genero=req.body.genero
+            corretor.email=req.body.email
+            corretor.img=req.body.img
 
-    
+            corretor.save().then(()=>{
+                req.flash('success_msg',"salvo com sucesso")
+                res.redirect('/')
+            }).catch((erro)=>{
+                req.flash("erro_msg",'erro ao salvar')
+                res.redirect('/')
+            })
+
+
+    }).catch((err)=>{
+        req.flash("erro_msg","Erro na edição")
+        res.redirect('/')
+    })
+
+},
+/*
+async login(req,res){
+    const user=await Corretor.findOne({
+        where:{
+            email:email=req.body.email
+        }
+    }).then(function(user){
+        if(!user){
+            res.redirect('/login');
+        }else{
+            bcrypt.compare(req.body.senha,user.senha,function(err,result){
+                if(result==true){
+                    console.log("Autenticado");
+                    user.e_admin==true
+                    res.redirect('/');
+                }else{
+                    console.log("deu ruim");
+                    res.send("Senha incorreta",res.redirect('/login'))
+                }
+            })
+        }
+    })
+    */
 }
 
 

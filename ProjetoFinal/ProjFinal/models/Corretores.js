@@ -39,6 +39,11 @@ const Corretores =connection.define('corretores',{
     img:{
         type:Sequelize.STRING,
         allowNull:true 
+    },
+    eAdmin:{
+        type:Sequelize.INTEGER,
+        allowNull:true,
+        default:0
     }
 
 

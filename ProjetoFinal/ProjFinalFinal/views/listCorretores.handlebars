@@ -1,0 +1,19 @@
+<h1>Lista de corretores</h1>
+<br>
+{{#each corretores}}
+<p> Nome: {{nome}} </p>
+<div style="float:left">
+<img src="/{{img}}" style="width:100px;heidht=200px;"alt="">
+</div>
+<div style="margin-left:120px">
+<p> CPF: {{cpf}} </p>
+<p> CRECI: {{creci}} </p>
+<p> Contato :{{email}} </p>
+</div>
+<a href="/delete/corretor/{{cpf}} "><button class="btn btn-success">Excluir</button></a>
+<a href="/update/corretor/{{cpf}} "><button class="btn btn-success">Editar</button></a>
+<hr>
+
+
+
+{{/each}}

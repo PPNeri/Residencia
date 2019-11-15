@@ -4,17 +4,17 @@ const bcrypt=require('bcryptjs')
 const bodyParser=require('body-parser')
 const Corretor=require('../models/Corretores')
 const Imovel=require('../models/Imoveis')
-const passport=require('passport');
-
-
 const CorretoresController=require('../controllers/CorretoresController')
 const ImoveisController=require('../controllers/ImoveisControllers')
-
-
 const session=require('express-session')
 const flash =require('connect-flash')
-//const passport=require('passport')
+const passport=require('passport')
 require('../config/auth')(passport)
+const {eAdmin}=require('../helpers/eAdmin')//Controle para administardores
+
+
+
+
 
 
 router.get('/property-grid2',ImoveisController.listprop);
@@ -26,6 +26,7 @@ router.post('/register/corretor',CorretoresController.create);
 router.put('/update/corretor/:cpf',CorretoresController.update);
 
 router.get('/update/corretor/:cpf',CorretoresController.editar);
+router.post('/update/corretor/',CorretoresController.editado);
 
 
 
@@ -33,10 +34,19 @@ router.get('/update/corretor/:cpf',CorretoresController.editar);
 router.get('/delete/corretor/:cpf',CorretoresController.delete);
 router.get('/list/corretores',CorretoresController.list);
 
+
+
+
+
 router.get('/formImovel',ImoveisController.showForm);
 router.post('/register/imovel',ImoveisController.create);
 router.get('/list/imoveis',ImoveisController.list);
 router.get('/list/imoveis/:id',ImoveisController.show);
+router.get('/delete/imoveis/:id',ImoveisController.delete);
+
+
+router.get('/update/imovel/:id',ImoveisController.editar);
+router.post('/update/imovel/',ImoveisController.editado);
 
 //CRIAÇÃO DAS FUNÇÕES DAS ROTAS
 
@@ -61,7 +71,7 @@ router.get('/categoria/add',(req,res)=>{
 //ROTAS PAGINA PRINCIPAL
 
 router.get('/',(req,res)=>{
-    res.render('index')
+    res.render('indexDani')
 })
 
 //CORRETOR-------------------------------------------
@@ -77,23 +87,22 @@ router.get('/property-single',(req,res)=>{
     res.render('property-single')
 })
 
-//LOGIN
-router.get('/login',(req,res)=>{
+
+router.get('/formLogin',(req,res)=>{
     res.render('formLogin')
 })
 
-router.post('/login',(req,res,next)=>{
+//router.post('/login',CorretoresController.login);
 
-        passport.authenticate("local",{
-            successRedirect:"/",
-            failureRedirect:"/login",
-            failureFlash:true
-    })(req,res,next)
+router.post('/formLogin',(req,res,next)=>{
+
+passport.authenticate("local",{
+    successRedirect:"/",
+    failureRedirect:"/formLogin",
+    failureFlash:true,
+})(req,res,next)
 
 })
-
-
-
 
 
 //EXPORTAR O ROUTER O MÓDULO EXPORTS RECEBE O ROUTER

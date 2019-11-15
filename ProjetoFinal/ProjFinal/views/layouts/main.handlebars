@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <title>ImobSys</title>
+    <title>PD Imóveis</title>
 
 </head>
 
@@ -23,27 +23,12 @@
 
 <body>
 
+{{>_navbar}}
+
+<div class="container-fluid mt-4">
 
 
- {{>_navbar}}
 
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<div class="container mt-4">
-  {{#if error}}
-  <div class= "alert alert-danger">{{error}}</div>
-{{else}}
-{{/if}}
 
 
   {{{body}}}
@@ -66,6 +51,7 @@
 <script src="/js/owl.carousel.min.js"></script>
 <script src="/js/scrollreveal.min.js"></script>
 <script src="/js/main.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 
 

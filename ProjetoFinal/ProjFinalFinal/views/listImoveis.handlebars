@@ -1,0 +1,26 @@
+<h1>Lista de Imoveis</h1>
+{{#each imoveis}}
+<div style="">
+<img src="/{{img1}}" style="width:300px;heidht=300px;"alt="">
+<img src="/{{img2}}" style="width:300px;heidht=300px;"alt="">
+<img src="/{{img3}}" style="width:300px;heidht=300px;"alt="">
+</div>
+<p></p>
+<p>ID: {{id}}</p>
+<p>CPF Corretor: {{corretor_cpf}}</p>
+<p>Tipo: {{tipo}}</p>
+<p>Valor :{{valor}}</p>            
+<p>Cidade: {{cidade}}</p>
+
+<p>Edereço: {{endereco}}</p>
+<p>Cep: {{cep}}</p>            
+<p>Banheiro: {{banheiros}}</p>            
+<p>Numero de Quartos: {{n_quartos}}</p>            
+<p>Garagem: {{garagem}}</p>            
+<a href="/delete/imoveis/{{id}} "><button class="btn btn-success">Excluir</button></a>
+<a href="/update/imovel/{{id}} "><button class="btn btn-success">Editar</button></a>
+<strong><hr></strong>
+
+{{/each}}
+
+

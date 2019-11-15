@@ -1,41 +1,55 @@
 const localStrategy=require('passport-local').Strategy
-const connection=require('../models/database');
-//require('mysql2')
-const bcrypt=require('bcryptjs')
-//require('../models/Corretores')
-//require('../controllers/CorretoresController')
 const corretor=require('../models/Corretores')
+const bcrypt=require('bcryptjs')
+require('../config/dbConfig')
 
 module.exports=function(passport){
 
 
-passport.use(new localStrategy({
-    usernameField:"email",passwordField:"senha"},(email,senha,done)=>{
-        corretor.findOne({email:email}).then((corretor)=>{
+passport.use(new localStrategy({usernameField:'email',passwordField:'senha'},(email,senha,done)=>{
+        corretor.findOne({where:{'email':email}}).then((corretor)=>{
             if(!corretor){
-                return done(null,false,{message:"Esta conta não existe"})
+                console.log("conta invalida")
+                return done(null,false,{message:"Email inválido, esta conta não existe. Insira uma conta existente."})
             }
 
-            bcrypt.compare(senha,corretor.senha,(batem,erro)=>{
+            bcrypt.compare(senha,corretor.senha,(erro,batem)=>{
                 if(batem){
+                    console.log("Bateu a senha")
                     return done(null,corretor)
 
                 }else{
-                    return done(null,false,{message:"Senha incorreta"})
+
+                    return done(null,false,{message:'Senha incorreta'})
+
                 }
             })
         })
     }))
 
-passport.serializeUser((corretor,done)=>{
-    done(null,corretor.cpf)
-})
 
-passport.deserializeUser((cpf,done)=>{
-    corretor.findById(cpf,(err,corretor)=>{
-        done(err,corretor)
+
+    passport.serializeUser((corretor,done)=>{
+        console.log('serialized')
+        done(null,corretor.cpf)
     })
-})
- 
+    
+    passport.deserializeUser((cpf,done)=>{
+        console.log('deserialized')
+        // corretor.findByPk(cpf,(erro,corretor)=>{
+        //     console.log('deserialized2')
+        //     done(erro,corretor)
+        // })
+        corretor.findByPk(cpf)
+        .then(corretor => {
+            console.log(corretor);
+            done(null, corretor);
+            
+        })
+        .catch(error => {
+            console.log(error);
+            done(error);
+        });
+    })
 
-} 
+}

@@ -10,6 +10,8 @@
     i) npm install --save bcryptjs
     h) npm install --save express-session(Validaçao)
     h) npm install --save connect-flash(Validaçãoclear)
+    i) npm install --save ejs
+
 
 
 
